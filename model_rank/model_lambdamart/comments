@@ -1,0 +1,12 @@
+#Comments
+
+There are something comments must to be said:
+
+this lambdaMart is not standard model described in paper "Learning to Rank Using an Ensemble ofLambda-Gradient Models", 
+the implement can refer to https://github.com/jma127/pyltr
+
+standard lambdaMart just use first derivative in the processing of node splitting, inspired by xgboost, 
+we can use both first derivative and second derivative in the processing of node splitting and value updation, 
+also regularization should be considered.
+
+Sadly, the result seems not to improved.
