@@ -1,33 +1,6 @@
-import math
-import numpy as np
-import math
-# import pandas
-from optparse import OptionParser
-from sklearn.tree import DecisionTreeRegressor
-from collections import defaultdict
-from copy import deepcopy
-from multiprocessing import Pool
-from itertools import chain
-import time
 from model_lambdamart.data_utils import *
 from model_lambdamart.lambda_MART import *
 if __name__ == "__main__":
-    # parser = OptionParser()
-    # parser.add_option("-t", "--train", action="store", type="string", dest="train_file")
-    # parser.add_option("-v", "--validation", action="store_true", dest="validate")
-    # parser.add_option("-p", "--predict", action="store", type="string", dest="predict_file")
-    #
-    # options, args = parser.parse_args()
-    # iterations = 30
-    # learning_rate = 0.001
-    #
-    # model = learn(options.train_file,
-    #               validate=options.validate,
-    #               n_trees=200)
-    #
-    # if options.predict_file:
-    #     predict(model, options.predict_file)
-
     ## baseline without rank
     X_train, y_train, Query_train = readDataset('../model_ranknet/Data/train.txt')
     X_test, y_test, Query_test = readDataset('../model_ranknet/Data/test.txt')
@@ -37,7 +10,6 @@ if __name__ == "__main__":
 
 
     ## lambda_MART
-
     query_d = 20
     q_dict = defaultdict(lambda: np.zeros(query_d))
     unique_q, counts = np.unique(Query_train, return_counts=True)
